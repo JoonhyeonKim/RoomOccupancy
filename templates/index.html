@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>People Count Prediction</title>
+</head>
+<body>
+
+    <h2>Enter the sensor data to predict occupancy</h2>
+    <form action="/predict" method="post">
+        <input type="text" name="S1_Temp" placeholder="S1 Temperature" required /><br>
+        <input type="text" name="S2_Temp" placeholder="S2 Temperature" required /><br>
+        <input type="text" name="S3_Temp" placeholder="S3 Temperature" required /><br>
+        <input type="text" name="S4_Temp" placeholder="S4 Temperature" required /><br>
+        <input type="text" name="S1_Light" placeholder="S1 Light" required /><br>
+        <input type="text" name="S2_Light" placeholder="S2 Light" required /><br>
+        <input type="text" name="S3_Light" placeholder="S3 Light" required /><br>
+        <input type="text" name="S4_Light" placeholder="S4 Light" required /><br>
+        <input type="text" name="S1_Sound" placeholder="S1 Sound" required /><br>
+        <input type="text" name="S2_Sound" placeholder="S2 Sound" required /><br>
+        <input type="text" name="S3_Sound" placeholder="S3 Sound" required /><br>
+        <input type="text" name="S4_Sound" placeholder="S4 Sound" required /><br>
+        <input type="text" name="S5_CO2" placeholder="S5 CO2" required /><br>
+        <input type="text" name="S5_CO2_Slope" placeholder="S5 CO2 Slope" required /><br>
+        <input type="text" name="S6_PIR" placeholder="S6 PIR" required /><br>
+        <input type="text" name="S7_PIR" placeholder="S7 PIR" required /><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+
+</body>
+</html>
